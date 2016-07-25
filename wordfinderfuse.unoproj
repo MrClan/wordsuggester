@@ -17,6 +17,7 @@
   "Copyright":"Copyright © 2016-2116 MrClan",
   "Publisher":"MrClan",
   "Version":"1.0.0",
+  "VersionCode": 1,
   "Mobile":{
     "Orientations":"Portrait"
   },

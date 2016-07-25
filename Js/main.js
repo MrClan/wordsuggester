@@ -14,8 +14,7 @@ var showInfo = o(false);
 var isReadyToSearch = o(true);
 var canAlphaRepeat = o(false);
 
-var find = function(){
-	isReadyToSearch.value = false;
+var find = function(){	
 	// search for o in all the words
 	var inpAsArray = input.value.split(' ').join('').toUpperCase().split(''); // remove spaces and then split into characters
 	msg.value =  "searching...please wait";
@@ -39,14 +38,14 @@ var find = function(){
 	{
 		msg.value = 'Too many words. Toggle settings above to reduce word count.'
 		return;
-	}
+	}	
+	isReadyToSearch.value = false; // Stop user from continuously pressing the SUGGEST BUTTON
 	if(anyAlpha.value){
 		msg.value = 'Searching all words with ' + len.value + ' letters...';
 	}
 	if(anyLength.value){
 		msg.value = 'Searching all words containing given letters of any length...';
 	}
-
 	resultsCount.value = 0;
 	dict.allWords.forEach(function(val, index){
 		if(anyLength.value === false)

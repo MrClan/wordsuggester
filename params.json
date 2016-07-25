@@ -1,0 +1,6 @@
+{
+  "name": "Wordsuggester",
+  "tagline": "A simple word suggester to assist in word games",
+  "body": "# Word Suggester\r\na simple word suggester to assist in word games\r\n\r\nWordSuggester is an application that looks up words in the dictionary and returns specific words that matches conditions like word-length or letter matches.\r\n\r\n# TODO\r\n- Add sequence check i.e. match alphabets in exact same sequence\r\n- Add ends with\r\n- Add starts with\r\n- Handle Back Button\r\n- Handle paged results for lots of results\r\n- Update UI to be more intuitive\r\n- Make the entire dictionary available on UI - maybe convert to a full fledged dictionary app\r\n\r\n# SCREENSHOTS\r\n![sc1](https://github.com/MrClan/wordsuggester/blob/master/Screenshots/Screenshot_2016-07-25-22-00-30.png)![sc2](https://github.com/MrClan/wordsuggester/blob/master/Screenshots/Screenshot_2016-07-25-22-15-54.png)![sc3](https://github.com/MrClan/wordsuggester/blob/master/Screenshots/Screenshot_2016-07-25-22-17-03.png)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

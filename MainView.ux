@@ -1,0 +1,75 @@
+<App>
+	<DockPanel Opacity="0.9" Background="#000" Dock="Fill">
+		<Font File="fonts/Roboto-Bold.ttf"              ux:Global="RobotoBold"        />
+		<Font File="fonts/Lato-Bold.ttf"                ux:Global="LatoBold"          />
+		<Font File="fonts/Lato-Light.ttf"               ux:Global="LatoLight"         />		
+		<Font File="fonts/Lora-Italic.ttf"              ux:Global="LoraItalic"        />
+		<Rectangle Color="#000" Layer="Background" Opacity="0.9">
+			<ImageFill File="Assets/bg.jpg" />
+		</Rectangle>
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom" />
+		<Text Opacity="0.5" Value="Assume some typical footer text here ;)" FontSize="12" Alignment="Center" Margin="12" Color="#09f" Font="LoraItalic" Dock="Bottom" Clicked="{incrInfo}"/>
+		<DockPanel Dock="Fill" Layer="Overlay" Color="#000" Clicked="{resetInfo}" ux:Name="dpInfo" Visibility="Collapsed">
+			<StackPanel Dock="Fill" Alignment="VerticalCenter" ItemSpacing="0">
+				<Rectangle Width="48" Height="48" CornerRadius="9">
+					<ImageFill File="Assets/me.jpg" />
+				</Rectangle>
+				<Text TextAlignment="Center" Value="MrClan" FontSize="24" Alignment="Center" Margin="12" Color="#09f" Font="LatoLight"/>
+				<Text TextAlignment="Center" Value="apptivators@outlook.com" FontSize="9" Alignment="Center" Margin="0" Color="#2ecc71" Font="LatoLight"/>
+				<Text TextAlignment="Center" Value="https://github.com/mrclan/wordsuggester" FontSize="9" Alignment="Center" Margin="0" Color="#f39c12" Font="LatoLight" Clicked="{launchGitRepoUrl}"/>
+			</StackPanel>
+			<WhileTrue Value="{showInfo}">
+				<Change dpInfo.Visibility="Visible" Duration="0.4" />
+			</WhileTrue>
+		</DockPanel>		
+		<Panel Dock="Top">
+			<StackPanel ItemSpacing="1">
+				<StackPanel Orientation="Horizontal" Alignment="Center">
+				<Star Width="48" Height="24" Ratio="0.4" >
+				    <LinearGradient>
+				        <GradientStop Offset="0" Color="#0ee" />
+				        <GradientStop Offset="1" Color="#e0e" />
+				    </LinearGradient>
+				</Star>
+				<Text Value="WORD SUGGESTER" FontSize="24" Alignment="Center" Margin="12" Color="#09f" Font="LatoLight"/>
+				<Star Width="48" Height="24" Ratio="0.4" >
+				    <LinearGradient>
+				        <GradientStop Offset="0" Color="#0ee" />
+				        <GradientStop Offset="1" Color="#e0e" />
+				    </LinearGradient>
+				</Star>
+				</StackPanel>
+				
+				<Basic.TextInput Font="LatoBold" PlaceholderText="Enter word length" PlaceholderColor="#aaa" Value="{length}" TextColor="#09f" Opacity="1" InputHint="Integer"/>
+				<Basic.TextInput Font="LatoBold"  PlaceholderText="Enter input letters" PlaceholderColor="#aaa" Value="{input}" TextColor="#09f" Opacity="1"/>								
+				<WrapPanel Orientation="Horizontal">
+					<Text Value="Any Length:" Alignment="Center" Margin="12" Color="#09f" Font="LatoLight" Clicked="{toggleLength}"/>
+					<Text Value="{anyLength}" Alignment="Center" Margin="12" Color="#2ecc71" Font="LatoLight" Clicked="{toggleLength}"/>
+					<Text Value="Any alpha" Alignment="Center" Margin="12" Color="#09f" Font="LatoLight" Clicked="{toggleAlpha}"/>
+					<Text Value="{anyAlpha}" Alignment="Center" Margin="12" Color="#2ecc71" Font="LatoLight" Clicked="{toggleAlpha}"/>
+					<Text Value="Can Alpha Repeat:" Alignment="Center" Margin="12" Color="#09f" Font="LatoLight" Clicked="{toggleRpt}"/>
+					<Text Value="{canAlphaRepeat}" Alignment="Center" Margin="12" Color="#2ecc71" Font="LatoLight" Clicked="{toggleRpt}"/>
+				</WrapPanel>
+				<StackPanel Orientation="Horizontal" Alignment="Center">
+					<Basic.Button Text="SUGGEST" Clicked="{search}" IsEnabled="{isReadyToSearch}" />
+					<Button Text="Clear" Clicked="{clear}" Height="18" MaxWidth="39" Opacity="0.5" Margin="24,0,0,0"/>
+				</StackPanel>
+				<Basic.Text Value="{msg}" Color="#2ecc71" Margin="4" Padding="4" TextWrapping="Wrap"/>
+				<Rectangle Height="1" Width="100%" Color="#000" />
+			</StackPanel>
+		</Panel>
+		<Panel Dock="Fill">
+			<ScrollView>		
+				<StackPanel ItemSpacing="12" Margin="4" Padding="4">
+					<ColumnLayout />
+					<Each Items="{results}">
+						<Text Font="RobotoBold" Value="{}" Color="#2ecc71" Margin="4" Padding="4"/>
+					</Each>
+				</StackPanel>
+			</ScrollView>
+		</Panel>
+		<JavaScript File="Js/main.js" />
+	</DockPanel>
+</App>
+

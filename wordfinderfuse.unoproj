@@ -1,0 +1,30 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+    "Fuse",
+    "FuseJS",
+    "Fuse.BasicTheme",
+    "Fuse.Launcher",
+    "Fuse.Reactive"
+  ],
+  "Icon":"Assets/icon.png",
+  "Includes": [
+    "*",
+    "Js/*.js:Bundle"
+  ],
+  "Title":"WordSuggester",
+  "Description":"WordSuggester is an application that looks up words in the dictionray and returns specific words that matches conditions like word-length or letter matches.",
+  "Copyright":"Copyright © 2016-2116 MrClan",
+  "Publisher":"MrClan",
+  "Version":"1.0.0",
+  "Mobile":{
+    "Orientations":"Portrait"
+  },
+  "Android":{
+    "Package":"com.mrclan.wordsuggester"
+  },
+  "iOS":{
+    "BundleIdentifier":"com.mrclan.wordsuggester",
+    "BundleName":"WordSuggester"
+  }
+}
